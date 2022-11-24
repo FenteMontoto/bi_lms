@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'ckeditor',
     'admin_interface',
     'colorfield',
+    
+    # Local apps
+    'applications.organizacion',
+    'applications.usuario',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +63,7 @@ ROOT_URLCONF = "bi_lms.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR,'templates/'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
