@@ -58,7 +58,7 @@
         <div id="nav">
             <ul id="menu">
                 <li class="iconos_menu {% if request.path == 'home' %}active{% endif %}">
-                    <a class="linkito {% if request.path == 'home' %}active{% endif %}" href="{% url 'Home' %}"><img src=" {% static 'imagenes/icons8-página-principal-50.png' %} " alt=" " srcset=" ">Inicio</a>
+                    <a class="linkito {% if request.path == 'home' %}active{% endif %}" href=""><img src=" {% static 'imagenes/icons8-página-principal-50.png' %} " alt=" " srcset=" ">Inicio</a>
                 </li>
                 <li id="mensajeria" class="iconos_menu {% if request.path == 'mensajeria' %}active{% endif %}">
                     <a class="linkito" href=""><img src=" {% static 'imagenes/icons8-mensaje-relleno-50.png' %} " alt=" " srcset=" ">Mensajeria</a><img src=" {% static 'imagenes/flecha-hacia-abajo-para-navegar.png' %} " alt="
@@ -89,7 +89,7 @@
             </ul>
         </div>
         <div id="main">
-            contenido
+            {% block contenido %} {% endblock contenido %}
         </div>
         <div id="aside">aside</div>
     </div>

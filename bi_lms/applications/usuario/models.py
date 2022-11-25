@@ -40,6 +40,8 @@ class Usuario(models.Model):
     # imagen=models.ImageField(upload_to="gestion_usuarios", null=True, blank=True)
     skill = models.ManyToManyField(Skill)
     comentarios=RichTextField(blank=True, null=True,default="")
+    USERNAME_FIELD='username'
+    # objects=UserManager()
     
     def __str__(self):
         return self.cod_gestor
