@@ -1,0 +1,4 @@
+{% extends "base/base.html" %} {% load static %} {% block title %}Cambiar Pass{% endblock title %}{% block contenido %}
+<h1>Cambiar contraseña</h1>
+<form action="" method="post">{% csrf_token %} {{form.as_p}} <button type="submit">Actualizar</button>
+</form>{% endblock contenido %}

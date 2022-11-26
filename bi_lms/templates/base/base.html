@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{title}}</title>
+    <title>{% block title %} {% endblock title %}</title>
     {% load static %}
 
     <!-- Custom styles for this template-->
@@ -44,10 +44,13 @@
                 <a href=""><img src=" {% static 'imagenes/usuario.png' %} " alt=" " srcset=" ">
                 </a>
             </div>
-            <div>usuario</div>
-
+            <div>{{user}}</div>
+            <div>
+                <a class="linkito" href="{% url 'usuario_app:cambiarpass' %}">Actualizar contraseña
+                </a>
+            </div>
             <div id="cerrar">
-                <a href=""><img src=" {% static 'imagenes/cerrar-sesion.png' %} " alt=" " srcset=" ">
+                <a href="{% url 'usuario_app:logout' %}"><img src=" {% static 'imagenes/cerrar-sesion.png' %} " alt=" " srcset=" ">
                 </a>
             </div>
         </div>
@@ -58,7 +61,7 @@
         <div id="nav">
             <ul id="menu">
                 <li class="iconos_menu {% if request.path == 'home' %}active{% endif %}">
-                    <a class="linkito {% if request.path == 'home' %}active{% endif %}" href=""><img src=" {% static 'imagenes/icons8-página-principal-50.png' %} " alt=" " srcset=" ">Inicio</a>
+                    <a class="linkito {% if request.path == 'home' %}active{% endif %}" href="{% url 'usuario_app:Home' %}"><img src=" {% static 'imagenes/icons8-página-principal-50.png' %} " alt=" " srcset=" ">Inicio</a>
                 </li>
                 <li id="mensajeria" class="iconos_menu {% if request.path == 'mensajeria' %}active{% endif %}">
                     <a class="linkito" href=""><img src=" {% static 'imagenes/icons8-mensaje-relleno-50.png' %} " alt=" " srcset=" ">Mensajeria</a><img src=" {% static 'imagenes/flecha-hacia-abajo-para-navegar.png' %} " alt="
@@ -73,7 +76,7 @@
                     </ul>
                 </li>
                 <li id="mensajeria" class="iconos_menu {% if request.path == 'formacion' %}active{% endif %}">
-                    <a class="linkito" href=""><img src=" {% static 'imagenes/icons8-aprendizaje-50.png' %} " alt=" " srcset=" ">Formación</a><img src=" {% static 'gestion_usuarios/imagenes/flecha-hacia-abajo-para-navegar.png' %} " alt=" " srcset=" ">
+                    <a class="linkito" href=""><img src=" {% static 'imagenes/icons8-aprendizaje-50.png' %} " alt=" " srcset=" ">Formación</a><img src=" {% static 'imagenes/flecha-hacia-abajo-para-navegar.png' %} " alt=" " srcset=" ">
                     <ul>
                         <li>
                             <a href="">Cursos activos</a> </li>
