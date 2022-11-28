@@ -2,3 +2,4 @@ django-admin-interface
 django-ckeditor
 edx-organizations
 # mysqlclient a través de pip install mysqlcient
+# mysqlclient a través de pip install djangorestframework

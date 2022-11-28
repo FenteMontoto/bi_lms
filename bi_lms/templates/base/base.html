@@ -44,7 +44,7 @@
                 <a href=""><img src=" {% static 'imagenes/usuario.png' %} " alt=" " srcset=" ">
                 </a>
             </div>
-            <div>{{user}}</div>
+            <div>{{user.first_name}}</div>
             <div>
                 <a class="linkito" href="{% url 'usuario_app:cambiarpass' %}">Actualizar contraseña
                 </a>

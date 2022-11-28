@@ -58,9 +58,11 @@ class UpdatePass(LoginRequiredMixin, FormView):
         )
         if user:
             new_pass=form.cleaned_data['password2']
-            usuario.set_password(new_pass)
-            usuario.save()
-            
+            new_pass2=form.cleaned_data['password3']
+            if new_pass==new_pass2:
+                usuario.set_password(new_pass)
+                usuario.save()
+        
         # Hacemos logout para que vuelva a logarse con la nueva pass   
         logout(self.request)
         return super(UpdatePass,self).form_valid(form)

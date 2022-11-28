@@ -35,7 +35,7 @@ class LoginForm(forms.Form):
 
 class UpdatePassForm(forms.Form):
     password1=forms.CharField(
-        label='Contraseña',
+        label='',
         required=True,
         widget=forms.PasswordInput(
             attrs={'placeholder':'Contraseña Actual'}
@@ -43,9 +43,25 @@ class UpdatePassForm(forms.Form):
     )
     
     password2=forms.CharField(
-        label='Contraseña',
+        label='',
         required=True,
         widget=forms.PasswordInput(
             attrs={'placeholder':'Contraseña Nueva'}
         )
     )
+    password3=forms.CharField(
+        label='',
+        required=True,
+        widget=forms.PasswordInput(
+            attrs={'placeholder':'Confirmar Contraseña'}
+        )
+    )
+    def clean(self):
+        cleaned_data=super(UpdatePassForm,self).clean()
+        username1=self.cleaned_data['password2']
+        username2=self.cleaned_data['password3']
+        
+        if not (username1==username2):
+            raise forms.ValidationError('Las contraseñas proporcionadas no coinciden, por favor, vuelve a intentarlo')
+        
+        return self.cleaned_data

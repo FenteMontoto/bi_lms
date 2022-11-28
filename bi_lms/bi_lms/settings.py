@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'admin_interface',
     'colorfield',
+    # 'rest-framework',
     
     # Local apps
     'applications.organizacion',
